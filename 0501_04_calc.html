@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .con {
+            margin-bottom: 10px;
+            /* margin: 0 auto; */
+            text-align: center;
+        }
+
+        .con>.row {
+            margin-bottom: 10px;
+        }
+
+        .res {
+            font-size: 150px;
+        }
+
+        /* #btn{
+            width: 100px;
+            font-size: 10px;    
+        } */
+        .tip {
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        #ope {
+            width: 20px;
+        }
+
+        .calc {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90px;
+
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .btnNum {
+            width: 20px;
+            margin-right: 3px;
+            margin-bottom: 3px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <button type="button" id="btn1" class="btnNum" onclick="myFunbtn1()">1</button>
+        <button type="button" id="btn2" class="btnNum" onclick="myFunbtn2()">2</button>
+        <button type="button" id="btn3" class="btnNum" onclick="myFunbtn3()">3</button>
+        <button type="button" id="btn4" class="btnNum" onclick="myFunbtn4()">4</button>
+        <button type="button" id="btn5" class="btnNum" onclick="myFunbtn5()">5</button>
+        <button type="button" id="btn6" class="btnNum" onclick="myFunbtn6()">6</button>
+        <button type="button" id="btn7" class="btnNum" onclick="myFunbtn7()">7</button>
+        <button type="button" id="btn8" class="btnNum" onclick="myFunbtn8()">8</button>
+        <button type="button" id="btn9" class="btnNum" onclick="myFunbtn9()">9</button>
+
+
+    </div>
+    <div class="con">
+        <input type="text" name="" id="opeSum">
+        <div class="row">
+            <button type="button" id="btnC" onclick="myFunCsum()">calc</button>
+
+        </div>
+    </div>
+    <hr>
+    <div class="con">
+        <div class="row">
+           
+            <input type="text" name="num1" id="num1">
+
+        </div>
+        <div class="row">
+            <label for="ope">輸入運算式</label>
+            <input type="text" name="ope" id="ope">
+
+
+
+        </div>
+        <div class="row">
+            <select name="" id="select">
+              <option value="+" id="op1">加</option>
+              <option value="-" id="op2">減</option>
+              <option value="*" id="op3">乘</option>
+              <option value="/" id="op4">除</option>
+            </select>
+          </div>
+        <div class="row">
+          
+            <input type="text" name="num2" id="num2">
+
+        </div>
+      
+        <div class="row">
+            <button type="button" id="btnC" onclick="myFunC()">calc</button>
+
+        </div>
+        <div class="row">
+            <button type="button" id="btnP" onclick="myFunP()">+</button>
+            <button type="button" id="btnN" onclick="myFunN()">-</button>
+            <button type="button" id="btnT" onclick="myFunT()">*</button>
+            <button type="button" id="btnM" onclick="myFunM()">/</button>
+
+
+        </div>
+       
+        <div class="row">
+
+            <button type="button" id="btn" onclick="reFun()">reset</button>
+
+        </div>
+    </div>
+    <div class="con c2">
+        <div class="tip" id="tip">
+            total
+        </div>
+
+    </div>
+    <div class="con c3">
+        <div class="res" id="res">
+            10
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        function initF() {
+            tip.style.display = 'none';
+            res.style.display = 'none';
+        }
+
+
+        function myFunP() {
+            console.log(`myFun`);
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            if (num1V.length < 1 || num2V.length < 1) {
+                alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+                return false;
+
+            }
+            opeSum.value = opeSum.value + '+';
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            res.innerText = Number(num1V) + Number(num2V);
+            btnP.innerText = `是在 Hello 加法`;
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function myFunN() {
+            console.log(`myFun`);
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            if (num1V.length < 1 || num2V.length < 1) {
+                alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+                return false;
+
+            }
+            opeSum.value = opeSum.value + '-';
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            res.innerText = Number(num1V) - Number(num2V);
+            btnN.innerText = `是在 Hello 剪髮`;
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function myFunT() {
+            console.log(`myFun`);
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            if (num1V.length < 1 || num2V.length < 1) {
+                alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+                return false;
+
+            }
+            opeSum.value = opeSum.value + '*';
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            res.innerText = Number(num1V) * Number(num2V);
+            btnT.innerText = `是在 Hello 乘法`;
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function myFunM() {
+            console.log(`myFun`);
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            if (num1V.length < 1 || num2V.length < 1) {
+                alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+                return false;
+
+            }
+            opeSum.value = opeSum.value + '/';
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            res.innerText = Number(num1V) / Number(num2V);
+            btnM.innerText = `是在 Hello 除法`;
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function myFunC() {
+
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+
+            let selectV = select.value;
+            
+           
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            if (selectV == '+' ) {
+                res.innerText = Number(num1V) + Number(num2V);
+
+
+            } else if (selectV == '-') {
+                res.innerText = Number(num1V) - Number(num2V);
+
+
+            } else if (selectV == '*') {
+                res.innerText = Number(num1V) * Number(num2V);
+
+
+            } else if (selectV == '/') {
+                res.innerText = Number(num1V) / Number(num2V);
+
+
+            } else {
+               
+            }
+
+            
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function myFunCsum() {
+
+            // let num1V = document.getElementById('num1').value;
+            // let num2V = document.getElementById('num2').value;
+            let opeSumV = document.getElementById('opeSum').value;
+            // if (num1V.length < 1 || num2V.length < 1) {
+            //     alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+            //     return false;
+
+            // }
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+           
+
+
+                // alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+
+
+                // return false;
+
+                res.innerText = Number(opeSum);
+            
+
+           
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+        function reFun() {
+
+            // 返回原本的 innerText  
+            // btn.innerText =`plus`;
+
+            document.getElementById('num1').value = null;
+            document.getElementById('num2').value = null;
+            document.getElementById('ope').value = " ";
+
+            //  btn 顯示返回
+            btnP.innerText = '+';
+            btnN.innerText = '-';
+            btnT.innerText = '*';
+            btnM.innerText = '/';
+            btnC.innerText = 'calc';
+
+
+            // java script display 
+
+            tip.style.display = 'block';
+            res.style.display = 'none';
+
+        }
+        function myFunbtn1() {
+            let opeSumV = opeSum.value;
+            console.log(opeSumV);
+            
+          
+            switch (opeSumV) {
+                case '1':
+                opeSum.value = opeSum.value + '1';               
+                   break;
+            
+                default:
+                    break;
+            }
+           
+        }
+        function myFunbtn2() {
+          
+           
+            opeSum.value = opeSum.value + '2';
+            let opeSumV = opeSum.value;
+            console.log(opeSumV);
+        }
+        function myFunbtn3() {
+            opeSum.value = opeSum.value + '3';
+        }
+        function myFunbtn4() {
+            opeSum.value = opeSum.value + '4';
+        }
+        function myFunbtn5() {
+            opeSum.value = opeSum.value + '5';
+        }
+        function myFunbtn6() {
+            opeSum.value = opeSum.value + '6';
+        }
+        function myFunbtn7() {
+            opeSum.value = opeSum.value + '7';
+        }
+        function myFunbtn8() {
+            opeSum.value = opeSum.value + '8';
+        }
+        function myFunbtn9() {
+            opeSum.value = opeSum.value + '9';
+        }
+
+
+        let num1 = document.getElementById('num1');
+        let num2 = document.getElementById('num2');
+
+        let tip = document.getElementById('tip');
+        let res = document.getElementById('res');
+        let btn = document.getElementById('btn');
+        let btnP = document.getElementById('btnP');
+        let btnN = document.getElementById('btnN');
+        let btnT = document.getElementById('btnT');
+        let btnM = document.getElementById('btnM');
+        let btnC = document.getElementById('btnC');
+        let ope = document.getElementById('ope');
+        let opeSum = document.getElementById('opeSum');
+        let select = document.getElementById('select');
+        let op1 = document.getElementById('op1');
+        let op2 = document.getElementById('op2');
+        let op3 = document.getElementById('op3');
+        let op4 = document.getElementById('op4');
+       
+        console.log(num1);
+        console.log(num2);
+        console.log(btn);
+        console.log(tip);
+        console.log(res);
+        console.log(select);
+       
+        console.log(op1);
+        console.log(op2);
+        console.log(op3);
+        console.log(op4);
+
+
+
+
+        // init function 預設為全部關閉 
+        initF();
+        // show and hide 
+        // dispaly 'none','block'
+        tip.style.display = 'block';
+
+
+
+
+
+    </script>
+</body>
+
+</html>

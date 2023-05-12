@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .c1{
+            margin-top: 30px;
+        }
+
+
+        .con {
+
+            margin-bottom: 10px;
+
+            /* margin: 0 auto; */
+            text-align: center;
+        }
+
+        .con>.row {
+            margin-bottom: 10px;
+        }
+
+        .res {
+            font-size: 150px;
+        }
+
+        /* #btn{
+            width: 100px;
+            font-size: 10px;    
+        } */
+        .tip {
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        #num1,
+        #num2,
+        #btnC,
+        #btn,
+        #select {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="con c1">
+        <div class="row">
+
+            <input type="text" name="num1" id="num1">
+
+        </div>
+    </div>
+
+
+    <div class="con">
+
+        <div class="row">
+            <select name="" id="select">
+                <option value="+" id="op1">加</option>
+                <option value="-" id="op2">減</option>
+                <option value="*" id="op3">乘</option>
+                <option value="/" id="op4">除</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="con">
+
+
+        <div class="row">
+
+            <input type="text" name="num2" id="num2">
+
+        </div>
+        <div class="row">
+            <button type="button" id="btnC" onclick="myFunC()">計算</button>
+
+        </div>
+
+        <div class="row">
+
+            <button type="button" id="btn" onclick="reFun()">reset</button>
+
+        </div>
+    </div>
+
+    <div class="con c2">
+        <div class="tip" id="tip">
+            total
+        </div>
+
+    </div>
+    <div class="con c3">
+        <div class="res" id="res">
+            10
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        function initF() {
+            tip.style.display = 'none';
+            res.style.display = 'none';
+        }
+
+
+
+        function myFunC() {
+
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            let selectV = document.getElementById('select').value;
+
+            if (num1V.length < 1 || num2V.length < 1) {
+                alert(`是在HELLO`);
+                return false;
+            }
+
+
+
+
+
+
+
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            if (selectV == '+') {
+                res.innerText = Number(num1V) + Number(num2V);
+
+
+            } else if (selectV == '-') {
+                res.innerText = Number(num1V) - Number(num2V);
+
+
+            } else if (selectV == '*') {
+                res.innerText = Number(num1V) * Number(num2V);
+
+
+            } else if (selectV == '/') {
+                res.innerText = Number(num1V) / Number(num2V);
+
+
+            } else {
+
+            }
+
+            btnC.innerText = '是在Hello';
+
+
+
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+
+        }
+
+        function reFun() {
+
+            // 返回原本的 innerText  
+            // btn.innerText =`plus`;
+
+            document.getElementById('num1').value = null;
+            document.getElementById('num2').value = null;
+
+
+            //  btn 顯示返回
+            btnC.innerText = '計算';
+
+
+
+            // java script display 
+
+            tip.style.display = 'block';
+            res.style.display = 'none';
+
+        }
+
+        let num1 = document.getElementById('num1');
+        let num2 = document.getElementById('num2');
+
+       
+        let res = document.getElementById('res');
+        let btn = document.getElementById('btn');
+
+        let btnC = document.getElementById('btnC');
+
+
+        let select = document.getElementById('select');
+        let op1 = document.getElementById('op1');
+        let op2 = document.getElementById('op2');
+        let op3 = document.getElementById('op3');
+        let op4 = document.getElementById('op4');
+
+        console.log(num1);
+        console.log(num2);
+        console.log(btn);
+        console.log(tip);
+        console.log(res);
+        console.log(select);
+
+        console.log(op1);
+        console.log(op2);
+        console.log(op3);
+        console.log(op4);
+
+
+
+
+        // init function 預設為全部關閉 
+
+        // show and hide 
+        // dispaly 'none','block'
+        tip.style.display = 'none';
+        res.style.display = 'none';
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

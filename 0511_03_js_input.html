@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .con {
+            margin-bottom: 10px;
+            /* margin: 0 auto; */
+            text-align: center;
+        }
+
+        .con>.row {
+            margin-bottom: 10px;
+        }
+
+        .res {
+            font-size: 150px;
+        }
+        /* #btn{
+            width: 100px;
+            font-size: 10px;    
+        } */
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="row">
+            <label for="num1">數字A</label>
+            <input type="text" name="num1" id="num1" >
+
+        </div>
+        <div class="row">
+            <label for="num2">數字B</label>
+            <input type="text" name="num2" id="num2">
+
+        </div>
+        <div class="row">
+            <button type="button" id="btn" onclick="myFun()">plus</button>
+            <button type="button" id="btn" onclick="reFun()">reset</button>
+            <!-- <button type="button" id="btn" onclick="initF()">init </button> -->
+        </div>
+    </div>
+    <div class="con c2">
+        <div class="tip" id="tip">
+            您輸入的數字加總為
+        </div>
+
+    </div>
+    <div class="con c3">
+        <div class="res" id="res">
+            10
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        function initF() {
+            tip.style.display = 'none';
+            res.style.display = 'none';
+        }
+      
+        function myFun() {
+            console.log(`myFun`);
+            let num1V = document.getElementById('num1').value;
+            let num2V = document.getElementById('num2').value;
+            if (num1V.length<1 ||num2V.length<1 ) {
+                alert(`是在HELLO是在HELLO是在HELLO是在HELLO`);
+                
+
+                return false ;
+                
+            }
+            // parseInt()    轉型整數
+            // parseFloat()  轉型浮點數
+            // Number()      轉型成數字
+            res.innerText=Number(num1V) + Number(num2V);
+            btn.innerText =`是在 Hello`;
+            // java script display 
+
+            tip.style.display = 'none';
+            res.style.display = 'block';
+            
+        }
+        function reFun() {
+           
+            // 返回原本的 innerText  
+            btn.innerText =`plus`;
+           
+            document.getElementById('num1').value = null;    
+            document.getElementById('num2').value = null;  
+
+            // java script display 
+            
+            tip.style.display = 'block';
+            res.style.display = 'none';
+            
+        }
+
+        let num1 = document.getElementById('num1');
+        let num2 = document.getElementById('num2');
+        let btn = document.getElementById('btn');
+        let tip = document.getElementById('tip');
+        let res = document.getElementById('res');
+        console.log(num1);
+        console.log(num2);
+        console.log(btn);
+        console.log(tip);
+        console.log(res);
+
+
+        // init function 預設為全部關閉 
+        initF();
+        // show and hide 
+        // dispaly 'none','block'
+        tip.style.display = 'block';
+     
+
+
+
+
+    </script>
+</body>
+
+</html>
